@@ -69,7 +69,6 @@ public class RegistrationForm {
         $("[data-content = 'Wiki']").shouldNotBe(hidden).click();
         $("[class=markdown-body]").$(byText("Soft assertions")).click();
         $("[class=markdown-body]").$(byText("Soft Using JUnit5 extend test class")).closest("H4").shouldNotBe(visible);
-        sleep (5000);
     }
 
 }
