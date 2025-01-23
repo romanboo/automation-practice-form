@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationForm {
@@ -55,9 +56,20 @@ public class RegistrationForm {
         $("[class=table-responsive]").shouldHave(text("haryana"));
         $("[class=table-responsive]").shouldHave(text("karnal"));
 
-
     }
 
+// - Откройте страницу Selenide в Github
+// - Перейдите в раздел Wiki проекта
+// - Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions
+// - Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
 
+    @Test
+    void wikiSelenideOnGithub() {
+        open("https://github.com/selenide/selenide");
+        $("[data-content = 'Wiki']").shouldNotBe(hidden).click();
+        $("[class=markdown-body]").$(byText("Soft assertions")).click();
+        $("[class=markdown-body]").$(byText("Soft Using JUnit5 extend test class")).closest("H4").shouldNotBe(visible);
+        sleep (5000);
+    }
 
 }
