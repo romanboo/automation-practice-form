@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationForm {
@@ -68,7 +69,7 @@ public class RegistrationForm {
         open("https://github.com/selenide/selenide");
         $("[data-content = 'Wiki']").shouldNotBe(hidden).click();
         $("[class=markdown-body]").$(byText("Soft assertions")).click();
-        $("[class=markdown-body]").$(byText("Soft Using JUnit5 extend test class")).closest("H4").shouldNotBe(visible);
+        $(byText("3. Using JUnit5 extend test class:")).shouldBe(visible);
     }
 
 }
