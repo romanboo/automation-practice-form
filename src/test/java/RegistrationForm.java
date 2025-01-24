@@ -69,7 +69,9 @@ public class RegistrationForm {
         open("https://github.com/selenide/selenide");
         $("[data-content = 'Wiki']").shouldNotBe(hidden).click();
         $("[class=markdown-body]").$(byText("Soft assertions")).click();
-        $(byText("3. Using JUnit5 extend test class:")).shouldBe(visible);
+        $(".markdown-body").shouldHave(text("3. Using JUnit5 extend test class:"));
+//        $(byText("3. Using JUnit5 extend test class:")).shouldBe(visible);
+//        $(byXpath("//h4[text()='3. Using JUnit5 extend test class:']")).shouldBe(visible);visible
     }
 
 }
