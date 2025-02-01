@@ -57,6 +57,7 @@ public class RegistrationForm {
         $("[class=table-responsive]").shouldHave(text("haryana"));
         $("[class=table-responsive]").shouldHave(text("karnal"));
 
+        
     }
 
 // - Откройте страницу Selenide в Github
