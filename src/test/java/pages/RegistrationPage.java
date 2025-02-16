@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import pages.components.DateComponent;
 import pages.components.CheckResultComponent;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -20,7 +21,8 @@ public class RegistrationPage {
             inputAddress = $("#currentAddress"),
             stateInput = $("#react-select-3-input"),
             sityInput = $("#react-select-4-input"),
-            submitForm = $("#submit");
+            submitForm = $("#submit"),
+            checkPracticeForm = $(".practice-form-wrapper");
 
 
     DateComponent dateComponent = new DateComponent();
@@ -119,4 +121,9 @@ public class RegistrationPage {
         checkResult.result(key,value);
         return this;
     }
+
+    public void checkPracticeForm(){
+        checkPracticeForm.shouldHave(text("Practice Form"));
+    }
+
 }

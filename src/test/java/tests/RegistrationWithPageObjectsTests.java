@@ -51,7 +51,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setGender("Male")
                 .setUserNumber("8908456342")
                 .submitForm()
-                .checkResult("Student Name", "Иван Иванов");
+                .checkPracticeForm();
 
     }
 }
