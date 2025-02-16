@@ -27,7 +27,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     String city = randomUtils.getCity(state);
 
     @Test
-    void successfulRegistrationTest() throws InterruptedException {
+    void successfulRegistrationTest()  {
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
