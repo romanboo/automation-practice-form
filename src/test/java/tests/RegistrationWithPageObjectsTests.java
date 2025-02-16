@@ -1,32 +1,59 @@
 package tests;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-
+import pages.components.CheckResultComponent;
+import utils.RandomUtils;
 
 
 public class RegistrationWithPageObjectsTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    RandomUtils randomUtils = new RandomUtils();
+    CheckResultComponent checkResultComponent = new CheckResultComponent();
 
+    String firstName = randomUtils.getFirstName();
+    String lastName = randomUtils.getFirstName();
+    String email = randomUtils.getEmail();
+    String gender = randomUtils.getGender();
+    String phone = randomUtils.getPhone();
+    String day = randomUtils.getCalendarDay();
+    String month = randomUtils.getCalendarMoth();
+    String year = randomUtils.getCalendarYear();
+    String subjects = randomUtils.getSubjects();
+    String hobbies = randomUtils.getHobbies();
+    String picture = randomUtils.getPicture();
+    String address = randomUtils.getCurrentAddres();
+    String state = randomUtils.getState();
+    String city = randomUtils.getCity(state);
 
     @Test
     void successfulRegistrationTest() {
         registrationPage.openPage()
-                .setFirstName("Иван")
-                .setLastName("Иванов")
-                .setEmail("userEmail@gmail.com")
-                .setGender("Male")
-                .setUserNumber("8908456342")
-                .setDateOfBirth("15", "May", "1980")
-                .setSubjects("Chemistry")
-                .setHobbies("Sports")
-                .uploadPicture("photo_2025.jpg")
-                .inputAddress("Ульяновск")
-                .stateInput("haryana")
-                .sityInput("karnal")
-                .submitForm()
-                .checkResult("Student Name", "Иван Иванов");
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setEmail(email)
+                .setGender(gender)
+                .setUserNumber(phone)
+                .setDateOfBirth(day, month, year)
+                .setSubjects(subjects)
+                .setHobbies(hobbies)
+                .uploadPicture(picture)
+                .inputAddress(address)
+                .stateInput(state)
+                .cityInput(city)
+                .submitForm();
 
+        checkResultComponent
+                .checkResult("Student Name", firstName + " " + lastName)
+                .checkResult("Student Email", email)
+                .checkResult("Gender", gender)
+                .checkResult("Mobile", phone)
+                .checkResult("Date of Birth", day + " "  +month + "," + year)
+                .checkResult("Subjects", subjects)
+                .checkResult("Hobbies", hobbies)
+                .checkResult("Picture", picture)
+                .checkResult("Address", address)
+                .checkResult("State and City", state + " " + city);
     }
 
     @Test
@@ -37,9 +64,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .setEmail("userEmail@gmail.com")
                 .setGender("Male")
                 .setUserNumber("8908456342")
-                .submitForm()
-                .checkResult("Student Name", "Иван Иванов");
-
+                .submitForm();
     }
 
     @Test

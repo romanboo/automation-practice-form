@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.DateComponent;
-import pages.components.CheckResultComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
@@ -26,7 +25,6 @@ public class RegistrationPage {
 
 
     DateComponent dateComponent = new DateComponent();
-    CheckResultComponent checkResult = new CheckResultComponent();
 
 
     public RegistrationPage openPage() {
@@ -103,7 +101,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage sityInput(String value) {
+    public RegistrationPage cityInput(String value) {
         sityInput.setValue(value).pressEnter();
 
         return this;
@@ -113,12 +111,6 @@ public class RegistrationPage {
     public RegistrationPage submitForm() {
         submitForm.click();
 
-        return this;
-    }
-
-
-    public RegistrationPage checkResult(String key, String value){
-        checkResult.result(key,value);
         return this;
     }
 

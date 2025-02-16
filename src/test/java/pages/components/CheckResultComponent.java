@@ -8,9 +8,11 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CheckResultComponent {
     private final SelenideElement result = $(".table-responsive");
-    public void result(String key, String value){
-        result.$(byText(key)).parent()
-                .shouldHave(text(value));
-    }
 
+    public CheckResultComponent checkResult(String key, String value) {
+        result.$(byText(key))
+                .parent()
+                .shouldHave(text(value));
+        return this;
+    }
 }
