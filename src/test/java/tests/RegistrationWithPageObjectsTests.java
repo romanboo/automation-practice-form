@@ -12,13 +12,13 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     CheckResultComponent checkResultComponent = new CheckResultComponent();
 
     String firstName = randomUtils.getFirstName();
-    String lastName = randomUtils.getFirstName();
+    String lastName = randomUtils.getLastName();
     String email = randomUtils.getEmail();
     String gender = randomUtils.getGender();
     String phone = randomUtils.getPhone();
-    String day = randomUtils.getCalendarDay();
-    String month = randomUtils.getCalendarMoth();
-    String year = randomUtils.getCalendarYear();
+    String day = randomUtils.getDay();
+    String month = randomUtils.getMoth();
+    String year = randomUtils.getYear();
     String subjects = randomUtils.getSubjects();
     String hobbies = randomUtils.getHobbies();
     String picture = randomUtils.getPicture();
@@ -27,7 +27,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
     String city = randomUtils.getCity(state);
 
     @Test
-    void successfulRegistrationTest() {
+    void successfulRegistrationTest() throws InterruptedException {
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -48,7 +48,7 @@ public class RegistrationWithPageObjectsTests extends TestBase {
                 .checkResult("Student Email", email)
                 .checkResult("Gender", gender)
                 .checkResult("Mobile", phone)
-                .checkResult("Date of Birth", day + " "  +month + "," + year)
+                .checkResult("Date of Birth", day + " " + month + "," + year)
                 .checkResult("Subjects", subjects)
                 .checkResult("Hobbies", hobbies)
                 .checkResult("Picture", picture)

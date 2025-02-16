@@ -24,18 +24,17 @@ public class RandomUtils {
         return faker.phoneNumber().subscriberNumber(10);
     }
 
-    public String getCalendarDay() {
+    public String getDay() {
         return String.valueOf(faker.number().numberBetween(1,28));
     }
 
-    public String getCalendarMoth() {
+    public String getMoth() {
         return faker.options().option("December","January","February",
                 "March","April","May","June", "July", "August","September",
                 "October","November");
-
     }
 
-    public String getCalendarYear() {
+    public String getYear() {
         return String.valueOf(faker.number().numberBetween(1970,2003));
     }
 
