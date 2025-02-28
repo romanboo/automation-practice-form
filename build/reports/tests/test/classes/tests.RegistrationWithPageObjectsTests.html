@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">3</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">5.066s</div>
+<div class="counter">10.943s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,8 +78,18 @@
 </tr>
 </thead>
 <tr>
+<td class="success">negativeShortRegistrationFormTest()</td>
+<td class="success">2.945s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">shortRegistrationFormTest()</td>
+<td class="success">3.122s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">successfulRegistrationTest()</td>
-<td class="success">5.066s</td>
+<td class="success">4.876s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -88,23 +98,91 @@
 <h2>Standard error</h2>
 <span class="code">
 <pre>[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
-[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1739732003657_31460_1
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737926077_36796_1
 [Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
 [Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
-февр. 16, 2025 10:53:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 132
-февр. 16, 2025 10:53:25 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 132.0.6834.197. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.13.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=132.0.6834.197 Platform=windows
+февр. 28, 2025 2:18:47 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 133
+февр. 28, 2025 2:18:47 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 133.0.6943.127. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.13.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=133.0.6943.127 Platform=windows
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.19.1
 [Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.13.0 build revision: ba948ece5b*
-[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -&gt; ChromeDriver: chrome on windows (5e2a302e955a61361df68a4b8d506dcb)
-[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (5e2a302e955a61361df68a4b8d506dcb),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1739732003657_31460_1] in 1 [size=1]
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -&gt; ChromeDriver: chrome on windows (9128de7f28e78545004239c7ea1a9d11)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (9128de7f28e78545004239c7ea1a9d11),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737926077_36796_1] in 1 [size=1]
 [Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Add shutdown hook in 1 [size=1]
-[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Deleted empty folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1739732003657_31460_1
-[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Close webdriver: 1 -&gt; ChromeDriver: chrome on windows (5e2a302e955a61361df68a4b8d506dcb)...
-[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Closed webdriver 1 in 176 ms
-[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Unregister WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (null),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1739732003657_31460_1] in 1 [size=0]
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Deleted empty folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737926077_36796_1
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Close webdriver: 1 -&gt; ChromeDriver: chrome on windows (9128de7f28e78545004239c7ea1a9d11)...
+[AsyncHttpClient-1-4] WARN org.asynchttpclient.netty.handler.WebSocketHandler - onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+февр. 28, 2025 2:18:50 PM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Closed webdriver 1 in 128 ms
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Unregister WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (null),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737926077_36796_1] in 1 [size=0]
+[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737930923_36796_1
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+февр. 28, 2025 2:18:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 133
+февр. 28, 2025 2:18:51 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 133.0.6943.127. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.13.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=133.0.6943.127 Platform=windows
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.19.1
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.13.0 build revision: ba948ece5b*
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -&gt; ChromeDriver: chrome on windows (ae537e062956cd70dd4de8978d2e3bba)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (ae537e062956cd70dd4de8978d2e3bba),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737930923_36796_1] in 1 [size=1]
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Deleted empty folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737930923_36796_1
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Close webdriver: 1 -&gt; ChromeDriver: chrome on windows (ae537e062956cd70dd4de8978d2e3bba)...
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Closed webdriver 1 in 133 ms
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Unregister WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (null),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737930923_36796_1] in 1 [size=0]
+[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 1 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737933893_36796_1
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+[Test worker] INFO com.codeborne.selenide.webdriver.SelenideNettyClientFactory - Changed readTimeout from PT3M to PT1M30S
+февр. 28, 2025 2:18:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 133
+февр. 28, 2025 2:18:54 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 133.0.6943.127. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.13.0` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=133.0.6943.127 Platform=windows
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 6.19.1
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 4.13.0 build revision: ba948ece5b*
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Created webdriver in thread 1: ChromeDriver -&gt; ChromeDriver: chrome on windows (e9a9f40f1a850f9b2cf7dc3849c7bde2)
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Register WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (e9a9f40f1a850f9b2cf7dc3849c7bde2),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737933893_36796_1] in 1 [size=1]
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Deleted empty folder: C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737933893_36796_1
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Close webdriver: 1 -&gt; ChromeDriver: chrome on windows (e9a9f40f1a850f9b2cf7dc3849c7bde2)...
+[Test worker] INFO com.codeborne.selenide.drivercommands.CloseDriverCommand - Closed webdriver 1 in 171 ms
+[Test worker] INFO com.codeborne.selenide.drivercommands.DisposablesRegistry - Unregister WebDriverInstance[config=StaticConfig,webDriver=ChromeDriver: chrome on windows (null),proxy=null,downloadsFolder=C:\Users\roman\IdeaProjects\automation-practice-form\build\downloads\1740737933893_36796_1] in 1 [size=0]
 </pre>
 </span>
 </div>
@@ -116,7 +194,7 @@ WARNING: Unable to find version of CDP to use for 132.0.6834.197. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.10</a> at 16 февр. 2025 г., 22:53:29</p>
+<a href="http://www.gradle.org">Gradle 8.10</a> at 28 февр. 2025 г., 14:18:57</p>
 </div>
 </div>
 </body>
