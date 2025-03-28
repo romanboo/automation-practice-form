@@ -1,0 +1,13 @@
+{
+  "searchType":"Ern+FirstName+LastName+BirthDate",
+  "params":{
+    "ids.ERN.value":"643c4bdb-38a8-48bc-a614-179044236e07",
+    "birth_date":"1963-09-15 00:00:00.000",
+    "last_name":"Бёлобоцкий",
+    "first_name":"Дженерик",
+    "middle_name":"Зиновьевич"
+  },
+  "relevantBlocks":[
+    "FIO","SNILS","INN","PASSPORTRF"
+  ]
+}
