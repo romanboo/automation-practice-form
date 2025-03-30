@@ -1,10 +1,16 @@
 package tests;
 
-import io.restassured.RestAssured;
-import org.junit.jupiter.api.Test;
-import utils.FileUtils;
+
+
+import models.lombok.RegisterBodyLombokModel;
+
+import models.lombok.RegisterResponseLombokModel;
 import models.pojo.LoginBodyModel;
 import models.pojo.LoginResponseModel;
+import org.junit.jupiter.api.Test;
+import utils.FileUtils;
+
+
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static io.restassured.http.ContentType.JSON;
@@ -14,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class REST_API {
 
     @Test
-    void successfulCreateTest() {
+    void successfulCreateBadPracticeTest() {
         String createData = "{\"name\": \"morpheus\", \"job\": \"leader\"}";
 
         given()
@@ -36,7 +42,7 @@ public class REST_API {
     }
 
     @Test
-    void successfulRegisterTest() {
+    void successfulRegisterPojoTest() {
         //String registerData = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\"}";
 
 
@@ -63,10 +69,15 @@ public class REST_API {
     }
 
     @Test
-    void unsuccessfulRegisterTest() {
-        String registerData = "{\"email\": \"sydney@fife\"}";
+    void unsuccessfulRegisterLombokTest() {
+        //String registerData = "{\"email\": \"sydney@fife\"}";
 
-        given()
+
+        RegisterBodyLombokModel registerData = new RegisterBodyLombokModel();
+        registerData.setEmail("sydney@fife");
+
+
+        RegisterResponseLombokModel response = given()
                 .body(registerData)
                 .contentType(JSON)
                 .log().uri()
@@ -78,7 +89,9 @@ public class REST_API {
                 .log().status()
                 .log().body()
                 .statusCode(400)
-                .body("error", is("Missing password"));
+                //.body("error", is("Missing password"));
+                .extract().as(RegisterResponseLombokModel.class);
+        assertEquals("Missing password", response.getError());
     }
 
     @Test

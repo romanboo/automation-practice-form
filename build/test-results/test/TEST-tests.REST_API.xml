@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.REST_API" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-30T09:12:59" hostname="DESKTOP-UT24LFN" time="1.51">
+<testsuite name="tests.REST_API" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-30T16:50:46" hostname="DESKTOP-UT24LFN" time="1.661">
   <properties/>
-  <testcase name="successfulRegisterTest()" classname="tests.REST_API" time="1.51"/>
+  <testcase name="unsuccessfulRegisterLombokTest()" classname="tests.REST_API" time="1.661"/>
   <system-out><![CDATA[Request URI:	https://reqres.in/api/register
-HTTP/1.1 200 OK
+HTTP/1.1 400 Bad Request
 {
-    "id": 4,
-    "token": "QpwL5tke4Pnpja7X4"
+    "error": "Missing password"
 }
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
