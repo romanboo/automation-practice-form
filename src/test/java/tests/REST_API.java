@@ -1,11 +1,15 @@
 package tests;
+
+import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 import utils.FileUtils;
-
+import models.pojo.LoginBodyModel;
+import models.pojo.LoginResponseModel;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class REST_API {
 
@@ -33,10 +37,15 @@ public class REST_API {
 
     @Test
     void successfulRegisterTest() {
-        String registerData = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\"}";
+        //String registerData = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\"}";
 
-        given()
-                .body(registerData)
+
+        LoginBodyModel authData = new LoginBodyModel();
+        authData.setEmail("eve.holt@reqres.in");
+        authData.setPassword("pistol");
+
+        LoginResponseModel response = given()
+                .body(authData)
                 .contentType(JSON)
                 .log().uri()
 
@@ -47,8 +56,10 @@ public class REST_API {
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .body("id", is(4))
-                .body("token", is("QpwL5tke4Pnpja7X4"));
+                .extract().as(LoginResponseModel.class);
+
+        assertEquals("QpwL5tke4Pnpja7X4", response.getToken());
+
     }
 
     @Test
