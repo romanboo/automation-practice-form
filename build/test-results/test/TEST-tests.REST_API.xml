@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.REST_API" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-03-31T19:55:38" hostname="DESKTOP-UT24LFN" time="3.271">
+  <properties/>
+  <testcase name="unsuccessfulRegisterWithStepsTest()" classname="tests.REST_API" time="3.271"/>
+  <system-out><![CDATA[Request URI:	https://reqres.in/api/register
+HTTP/1.1 400 Bad Request
+{
+    "error": "Missing password"
+}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
