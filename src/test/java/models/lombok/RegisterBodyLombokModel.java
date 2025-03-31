@@ -7,4 +7,7 @@ public class RegisterBodyLombokModel {
 
     String email, password;
 
+    public String getError() {
+        return "";
+    }
 }

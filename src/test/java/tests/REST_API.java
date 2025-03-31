@@ -2,6 +2,7 @@ package tests;
 
 
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import models.lombok.RegisterBodyLombokModel;
 
 import models.lombok.RegisterResponseLombokModel;
@@ -11,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import utils.FileUtils;
 
 
+import static helpers.CustomAllureListener.withCustomTemplates;
+import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 import static io.restassured.http.ContentType.JSON;
@@ -27,6 +30,8 @@ public class REST_API {
                 .body(createData)
                 .contentType(JSON)
                 .log().uri()
+                .log().body()
+                .log().headers()
 
                 .when()
                 .post("https://reqres.in/api/users")
@@ -68,6 +73,8 @@ public class REST_API {
 
     }
 
+
+
     @Test
     void unsuccessfulRegisterLombokTest() {
         //String registerData = "{\"email\": \"sydney@fife\"}";
@@ -95,11 +102,42 @@ public class REST_API {
     }
 
     @Test
-    void delayedResponseTest() {
+    void unsuccessfulRegisterWithStepsTest() {
+
+        RegisterResponseLombokModel response = step("make reguest", () -> {
+            RegisterBodyLombokModel registerData = new RegisterBodyLombokModel();
+            registerData.setEmail("sydney@fife");
+
+
+           return given()
+                    .body(registerData)
+                    .contentType(JSON)
+                    .log().uri()
+
+                    .when()
+                    .post("https://reqres.in/api/register")
+
+                    .then()
+                    .log().status()
+                    .log().body()
+                    .statusCode(400)
+                    //.body("error", is("Missing password"));
+                    .extract().as(RegisterResponseLombokModel.class);
+        });
+
+        step("check response", () -> {
+            assertEquals("Missing password", response.getError());
+        });
+    }
+
+
+
+    @Test
+    void delayedResponseAllureTest() {
 
 
         given()
-
+                .filter(new AllureRestAssured())
                 .when()
                 .get("https://reqres.in/api/users?delay=3")
 
@@ -111,11 +149,12 @@ public class REST_API {
     }
 
     @Test
-    void listUserTest() {
+    void listUserCustomAllureTest() {
 
 
         given()
 
+                .filter(withCustomTemplates())
                 .when()
                 .get("https://reqres.in/api/users?page=2")
 
@@ -127,7 +166,5 @@ public class REST_API {
                 .body("per_page", is(6))
                 .body("total", is(12));
     }
-
-
 
 }

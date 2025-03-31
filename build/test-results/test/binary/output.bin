@@ -1,6 +1,5 @@
 -Request URI:	https://reqres.in/api/register
-HTTP/1.1 200 OK
+HTTP/1.1 400 Bad Request
 {
-    "id": 4,
-!    "token": "QpwL5tke4Pnpja7X4"
+     "error": "Missing password"
 }
