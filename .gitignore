@@ -1,3 +1,4 @@
 .gradle
 .idea
 *.log
+automation-practice-form\src\test\java\tests\ReferenceData.java

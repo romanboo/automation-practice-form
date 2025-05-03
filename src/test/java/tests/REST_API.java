@@ -19,6 +19,8 @@ import static org.hamcrest.Matchers.is;
 import static io.restassured.http.ContentType.JSON;
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static specs.LoginSpec.RegisterRequestSpec;
+import static specs.LoginSpec.RegisterResponceSpec;
 
 public class REST_API {
 
@@ -50,7 +52,6 @@ public class REST_API {
     void successfulRegisterPojoTest() {
         //String registerData = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\"}";
 
-
         LoginBodyModel authData = new LoginBodyModel();
         authData.setEmail("eve.holt@reqres.in");
         authData.setPassword("pistol");
@@ -79,10 +80,8 @@ public class REST_API {
     void unsuccessfulRegisterLombokTest() {
         //String registerData = "{\"email\": \"sydney@fife\"}";
 
-
         RegisterBodyLombokModel registerData = new RegisterBodyLombokModel();
         registerData.setEmail("sydney@fife");
-
 
         RegisterResponseLombokModel response = given()
                 .body(registerData)
@@ -131,10 +130,8 @@ public class REST_API {
     }
 
 
-
     @Test
     void delayedResponseAllureTest() {
-
 
         given()
                 .filter(new AllureRestAssured())
@@ -151,7 +148,6 @@ public class REST_API {
     @Test
     void listUserCustomAllureTest() {
 
-
         given()
 
                 .filter(withCustomTemplates())
@@ -165,6 +161,30 @@ public class REST_API {
                 .body("total_pages", is(2))
                 .body("per_page", is(6))
                 .body("total", is(12));
+    }
+
+    @Test
+    void successfulRegisterSpecsTest() {
+        //String registerData = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pistol\"}";
+
+        LoginBodyModel authData = new LoginBodyModel();
+        authData.setEmail("eve.holt@reqres.in");
+        authData.setPassword("pistol");
+
+        LoginResponseModel response = given()
+                .spec(RegisterRequestSpec)
+                .body(authData)
+
+                .when()
+                .post("https://reqres.in/api/register")
+
+                .then()
+                .spec(RegisterResponceSpec)
+                .statusCode(200)
+                .extract().as(LoginResponseModel.class);
+
+        assertEquals("QpwL5tke4Pnpja7X4", response.getToken());
+
     }
 
 }
