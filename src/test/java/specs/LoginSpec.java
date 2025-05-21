@@ -20,8 +20,4 @@ public class LoginSpec {
             .log(STATUS)
             .log(BODY)
             .build();
-
-
-
-
 }

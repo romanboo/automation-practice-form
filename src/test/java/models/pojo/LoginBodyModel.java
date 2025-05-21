@@ -19,4 +19,8 @@ public class LoginBodyModel {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public String getLogin() {
+        return "";
+    }
 }
