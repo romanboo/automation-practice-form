@@ -7,19 +7,21 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CollectionExamples {
 
     public static void main(String[] args) {
-        System.out.println("=== ArrayListExample ===");
+        System.out.println("*** ArrayListExample ***");
         ArrayListExample arrayListExample = new ArrayListExample();
-        arrayListExample.addElement("Java");
-        arrayListExample.addElement("Python");
-        arrayListExample.containsElement("Java");
-        arrayListExample.removeElement("Python");
-        arrayListExample.containsElement("Python");
+        arrayListExample.addElement("Cat");
+        arrayListExample.addElement("Dog");
+        arrayListExample.containsElement("Cat");
+        arrayListExample.removeElement("Dog");
+        arrayListExample.containsElement("Dog");
 
-        System.out.println("\n=== HashSetExample ===");
+        System.out.println("\n*** HashSetExample ***");
         HashSetExample hashSetExample = new HashSetExample();
         hashSetExample.addElement(10);
         hashSetExample.addElement(20);
@@ -27,7 +29,7 @@ public class CollectionExamples {
         hashSetExample.removeElement(20);
         hashSetExample.containsElement(20);
 
-        System.out.println("\n=== HashMapExample ===");
+        System.out.println("\n*** HashMapExample ***");
         HashMapExample hashMapExample = new HashMapExample();
         hashMapExample.addElement("One", 1);
         hashMapExample.addElement("Two", 2);
@@ -35,16 +37,16 @@ public class CollectionExamples {
         hashMapExample.removeElement("Two");
         hashMapExample.containsKey("Two");
 
-        System.out.println("\n=== LinkedListExample ===");
+        System.out.println("\n*** LinkedListExample ***");
         LinkedListExample linkedListExample = new LinkedListExample();
-        linkedListExample.addElement(3.14);
-        linkedListExample.addElement(2.71);
-        linkedListExample.containsElement(3.14);
-        linkedListExample.removeElement(2.71);
-        linkedListExample.containsElement(2.71);
+        linkedListExample.addElement(6.66);
+        linkedListExample.addElement(7.77);
+        linkedListExample.containsElement(6.66);
+        linkedListExample.removeElement(7.77);
+        linkedListExample.containsElement(7.77);
     }
 
-    // Класс 1: ArrayList с for-loop
+    // Класс 1: ArrayList (динамический массив)с for-loop
     static class ArrayListExample {
         private List<String> list = new ArrayList<>();
 
@@ -56,7 +58,7 @@ public class CollectionExamples {
 
         // Удаление элемента
         public void removeElement(String element) {
-            for (int i = 0; i < list.size(); i++) { // Используем for-loop
+            for (int i = 0; i < list.size(); i++) { // for-loop
                 if (list.get(i).equals(element)) {
                     String removed = list.remove(i);
                     System.out.println("Удален элемент: " + removed);
@@ -68,7 +70,7 @@ public class CollectionExamples {
 
         // Поиск элемента
         public boolean containsElement(String element) {
-            for (int i = 0; i < list.size(); i++) { // Используем for-loop
+            for (int i = 0; i < list.size(); i++) { // for-loop
                 if (list.get(i).equals(element)) {
                     System.out.println("Элемент найден: " + element);
                     return true;
@@ -79,7 +81,7 @@ public class CollectionExamples {
         }
     }
 
-    // Класс 2: HashSet с for-each loop
+    // Класс 2: HashSet (множество) с for-each loop
     static class HashSetExample {
         private Set<Integer> set = new HashSet<>();
 
@@ -91,7 +93,7 @@ public class CollectionExamples {
 
         // Удаление элемента
         public void removeElement(int element) {
-            for (int num : set) { // Используем for-each loop
+            for (int num : set) { // for-each loop
                 if (num == element) {
                     set.remove(num);
                     System.out.println("Удален элемент: " + element);
@@ -103,7 +105,7 @@ public class CollectionExamples {
 
         // Поиск элемента
         public boolean containsElement(int element) {
-            for (int num : set) { // Используем for-each loop
+            for (int num : set) { //  for-each loop
                 if (num == element) {
                     System.out.println("Элемент найден: " + element);
                     return true;
@@ -114,7 +116,7 @@ public class CollectionExamples {
         }
     }
 
-    // Класс 3: HashMap с while loop и Iterator
+    // Класс 3: HashMap (ассоциативный массив) с while loop и Iterator
     static class HashMapExample {
         private Map<String, Integer> map = new HashMap<>();
 
@@ -127,7 +129,7 @@ public class CollectionExamples {
         // Удаление элемента
         public void removeElement(String key) {
             Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
-            while (iterator.hasNext()) { // Используем while loop с итератором
+            while (iterator.hasNext()) { // while loop с итератором
                 Map.Entry<String, Integer> entry = iterator.next();
                 if (entry.getKey().equals(key)) {
                     iterator.remove();
@@ -141,7 +143,7 @@ public class CollectionExamples {
         // Поиск элемента
         public boolean containsKey(String key) {
             Iterator<String> iterator = map.keySet().iterator();
-            while (iterator.hasNext()) { // Используем while loop с итератором
+            while (iterator.hasNext()) { // while loop с итератором
                 if (iterator.next().equals(key)) {
                     System.out.println("Ключ найден: " + key);
                     return true;
@@ -154,53 +156,54 @@ public class CollectionExamples {
 
     // Класс 4: LinkedList с do-while loop
     static class LinkedListExample {
-        private List<Double> list = new ArrayList<>(); // В Java нет отдельного LinkedList в базовых коллекциях
+        private List<Double> linkedList = new LinkedList<>();
 
         // Добавление элемента
         public void addElement(double element) {
-            list.add(element);
+            linkedList.add(element);
             System.out.println("Добавлен элемент: " + element);
         }
 
         // Удаление элемента
         public void removeElement(double element) {
-            if (list.isEmpty()) {
+            if (linkedList.isEmpty()) {
                 System.out.println("Список пуст");
                 return;
             }
 
             int i = 0;
             do { // Используем do-while loop
-                if (i < list.size() && list.get(i) == element) {
-                    double removed = list.remove(i);
+                if (i < linkedList.size() && linkedList.get(i) == element) {
+                    double removed = linkedList.remove(i);
                     System.out.println("Удален элемент: " + removed);
                     return;
                 }
                 i++;
-            } while (i < list.size());
+            } while (i < linkedList.size());
 
             System.out.println("Элемент не найден: " + element);
         }
 
         // Поиск элемента
         public boolean containsElement(double element) {
-            if (list.isEmpty()) {
+            if (linkedList.isEmpty()) {
                 System.out.println("Список пуст");
                 return false;
             }
 
             int i = 0;
             do { // Используем do-while loop
-                if (i < list.size() && list.get(i) == element) {
+                if (i < linkedList.size() && linkedList.get(i) == element) {
                     System.out.println("Элемент найден: " + element);
                     return true;
                 }
                 i++;
-            } while (i < list.size());
+            } while (i < linkedList.size());
 
             System.out.println("Элемент не найден: " + element);
             return false;
         }
+
     }
 
 
