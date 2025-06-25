@@ -6,9 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import steps.demowebshop.CartSteps;
-
 import java.util.stream.Stream;
-
 import static io.restassured.RestAssured.given;
 import static specs.demowebshop.AuthSpec.*;
 import static org.hamcrest.Matchers.*;
@@ -18,9 +16,9 @@ public class CartTestsDemoWebshop extends TestBase {
 
     CartSteps cartSteps = new CartSteps();
 
-    // Метод для предоставления данных для параметризованного теста
+
     private static Stream<Integer> productIdsProvider() {
-        return Stream.of(13, 22); // Пример различных ID товаров
+        return Stream.of(13, 22);
     }
 
     @ParameterizedTest(name = "Добавление товара с ID {0} в корзину")
@@ -45,7 +43,7 @@ public class CartTestsDemoWebshop extends TestBase {
     }
 
     @ParameterizedTest(name = "Добавление и удаление товара с ID {0}")
-    @ValueSource(ints = {13, 22}) // Альтернативный способ параметризации
+    @ValueSource(ints = {13, 45})
     void addAndDeleteFromCartTest(int productId) {
         String authCookieValue = given()
                 .spec(loginRequestSpec)

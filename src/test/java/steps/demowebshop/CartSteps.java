@@ -2,11 +2,8 @@ package steps.demowebshop;
 
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import static io.restassured.RestAssured.given;
 import static specs.demowebshop.CartSpec.*;
 
