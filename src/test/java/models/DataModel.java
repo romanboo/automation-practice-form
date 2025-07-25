@@ -13,9 +13,10 @@ public class DataModel {
     private List<Integer> sourcechannels;
 
     @JsonProperty("last_update_dt")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastUpdateDt;
 
+    // Геттеры и сеттеры
     public long getVersion() { return version; }
     public void setVersion(long version) { this.version = version; }
 
@@ -29,9 +30,6 @@ public class DataModel {
 
     public boolean isDeleted() { return deleted; }
     public void setDeleted(boolean deleted) { this.deleted = deleted; }
-
-    public List<Integer> getSourcechannels() { return sourcechannels; }
-    public void setSourcechannels(List<Integer> sourcechannels) { this.sourcechannels = sourcechannels; }
 
     public LocalDateTime getLastUpdateDt() { return lastUpdateDt; }
     public void setLastUpdateDt(LocalDateTime lastUpdateDt) { this.lastUpdateDt = lastUpdateDt; }
