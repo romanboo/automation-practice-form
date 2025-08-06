@@ -18,7 +18,6 @@ public class JsonFileTest {
         InputStream is = getClass().getClassLoader().getResourceAsStream("sample_json.json");
         assertNotNull(is, "Файл не найден");
 
-
         mapper.registerModule(new JavaTimeModule());
 
         DataModel data = mapper.readValue(is, DataModel.class);

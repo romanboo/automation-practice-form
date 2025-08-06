@@ -1,10 +1,12 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DataModel {
     private long version;
     private String mdmId;
@@ -16,7 +18,6 @@ public class DataModel {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime lastUpdateDt;
 
-    // Геттеры и сеттеры
     public long getVersion() { return version; }
     public void setVersion(long version) { this.version = version; }
 
