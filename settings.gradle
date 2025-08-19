@@ -3,5 +3,7 @@ pluginManagement {
         maven {
             url 'https://repo-mirror.mos.ru/repository/maven-gradle'
         }
+        mavenCentral()
+        gradlePluginPortal()
     }
 }
