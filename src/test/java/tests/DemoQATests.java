@@ -14,8 +14,6 @@ import static io.qameta.allure.Allure.step;
 
 @Epic("DemoQA Automation")
 @Feature("Form Testing")
-@Owner("YourName")
-@Tag("regression")
 public class DemoQATests {
 
     @BeforeAll
@@ -36,7 +34,6 @@ public class DemoQATests {
 
     @Test
     @Story("Submit TextBox Form")
-    @Severity(SeverityLevel.CRITICAL)
     @Description("Test verifies that TextBox form submits data correctly")
     @DisplayName("Проверка работы TextBox формы")
     @Link(name = "DemoQA TextBox", url = "https://demoqa.com/text-box")
@@ -71,7 +68,6 @@ public class DemoQATests {
 
     @Test
     @Story("CheckBox Selection")
-    @Severity(SeverityLevel.NORMAL)
     @Description("Test verifies that multiple options can be selected in CheckBox")
     @DisplayName("Проверка выбора чекбоксов")
     void checkBoxShouldAllowSelectingMultipleOptions() {
@@ -104,7 +100,6 @@ public class DemoQATests {
 
     @Test
     @Story("RadioButton Selection")
-    @Severity(SeverityLevel.NORMAL)
     @Description("Test verifies that only one RadioButton can be selected")
     @DisplayName("Проверка радиокнопок")
     void radioButtonsShouldAllowSingleSelection() {
@@ -133,7 +128,6 @@ public class DemoQATests {
 
     @Test
     @Story("WebTables CRUD")
-    @Severity(SeverityLevel.CRITICAL)
     @Description("Test verifies adding and deleting records in WebTables")
     @DisplayName("Проверка работы с таблицей")
     void webTablesShouldAllowAddingAndDeletingRecords() {
@@ -169,7 +163,6 @@ public class DemoQATests {
 
     @Test
     @Story("Date Picker")
-    @Severity(SeverityLevel.NORMAL)
     @Description("Test verifies date selection in date picker")
     @DisplayName("Проверка выбора даты")
     void datePickerShouldSelectCorrectDate() {
@@ -194,7 +187,6 @@ public class DemoQATests {
 
     @Test
     @Story("Modal Dialogs")
-    @Severity(SeverityLevel.NORMAL)
     @Description("Test verifies opening and closing modal dialogs")
     @DisplayName("Проверка модальных окон")
     void modalDialogsShouldOpenAndClose() {
@@ -222,7 +214,6 @@ public class DemoQATests {
 
     @Test
     @Story("Buttons Interactions")
-    @Severity(SeverityLevel.NORMAL)
     @Description("Test verifies different button interactions")
     @DisplayName("Проверка взаимодействия с кнопками")
     void buttonsShouldRespondToDifferentInteractions() {
@@ -252,7 +243,6 @@ public class DemoQATests {
 
     @Test
     @Story("Browser Windows")
-    @Severity(SeverityLevel.NORMAL)
     @Description("Test verifies opening new browser windows/tabs")
     @DisplayName("Проверка работы с новыми окнами")
     void shouldHandleNewBrowserWindows() {
