@@ -24,7 +24,7 @@ public class DemoQATests {
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 10000;
         Configuration.holdBrowserOpen = false;
-        Configuration.headless = true;
+        Configuration.headless = false;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
