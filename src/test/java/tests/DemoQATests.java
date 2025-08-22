@@ -7,6 +7,7 @@ import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
@@ -25,6 +26,8 @@ public class DemoQATests {
         Configuration.timeout = 10000;
         Configuration.holdBrowserOpen = false;
         Configuration.headless = false;
+        Configuration.browserCapabilities = new ChromeOptions()
+                .addArguments("--incognito");
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
