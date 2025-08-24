@@ -8,6 +8,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
@@ -15,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 
 @Epic("DemoQA Automation")
 @Feature("Form Testing")
-public class DemoQATests {
+public class DemoQATests extends TestBase{
 
     @BeforeAll
     static void setup() {
@@ -28,6 +29,14 @@ public class DemoQATests {
         Configuration.headless = false;
         Configuration.browserCapabilities = new ChromeOptions()
                 .addArguments("--incognito");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        Configuration.browserCapabilities = capabilities;
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
