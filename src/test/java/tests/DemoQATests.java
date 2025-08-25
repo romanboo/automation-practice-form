@@ -10,9 +10,6 @@ import helpers.Attach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.util.Map;
-
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 import static io.qameta.allure.Allure.step;
@@ -30,8 +27,7 @@ public class DemoQATests extends TestBase{
         Configuration.timeout = 10000;
         Configuration.holdBrowserOpen = false;
         Configuration.headless = false;
-        Configuration.browserCapabilities = new ChromeOptions()
-                .addArguments("--incognito");
+
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
