@@ -24,7 +24,7 @@ public class DemoQATests extends TestBase{
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.timeout = 10000;
+        Configuration.timeout = 15000;
         Configuration.holdBrowserOpen = false;
         Configuration.headless = false;
 
