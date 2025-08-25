@@ -293,14 +293,7 @@ public class DemoQATests extends TestBase{
         });
     }
 
-    @AfterEach
-    void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
 
-    }
 
     @Attachment(value = "Screenshot", type = "image/png")
     private byte[] takeScreenshot() {
