@@ -6,6 +6,7 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
+import helpers.Attach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -41,6 +42,15 @@ public class DemoQATests extends TestBase{
                 .screenshots(true)
                 .savePageSource(true)
                 .includeSelenideSteps(true));
+    }
+
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
+
     }
 
     @Test
@@ -284,9 +294,12 @@ public class DemoQATests extends TestBase{
     }
 
     @AfterEach
-    void tearDown() {
-        takeScreenshot();
-        Selenide.closeWebDriver();
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
+
     }
 
     @Attachment(value = "Screenshot", type = "image/png")
