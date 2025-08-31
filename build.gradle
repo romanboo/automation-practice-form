@@ -56,6 +56,7 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
     systemProperty "allure.results.directory", "build/allure-results"
+    systemProperties System.getProperties() // Добавьте эту строку
     testLogging {
         events "started", "skipped", "failed", "standard_error", "standard_out"
         exceptionFormat "short"
