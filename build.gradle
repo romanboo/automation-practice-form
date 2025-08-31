@@ -53,33 +53,19 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-// Основная задача test
-test {
+
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
-    systemProperty "allure.results.directory", "build/allure-results"
-    systemProperties System.getProperties()
-
-    // Фильтрация по тегам если указан includeTags
-    if (System.getProperty("includeTags") != null) {
-        filter {
-            includeTagsMatching System.getProperty("includeTags")
-        }
-    }
-
-    // Фильтрация по имени класса если указан test.class
-    if (System.getProperty("test.class") != null) {
-        filter {
-            includeClassNamePattern System.getProperty("test.class")
-        }
-    }
 
     testLogging {
-        events "started", "skipped", "failed", "standard_error", "standard_out"
-        exceptionFormat "short"
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
     }
 }
 
-// Отдельные задачи для каждого типа тестов
 task smoke(type: Test) {
     useJUnitPlatform {
         includeTags("smoke")
@@ -99,47 +85,4 @@ task allTests(type: Test) {
     systemProperties System.getProperties()
 }
 
-// Универсальная задача для параметризованного запуска
-task runTests(type: Test) {
-    useJUnitPlatform {
-        if (System.getProperty("includeTags") != null) {
-            includeTags(System.getProperty("includeTags"))
-        } else if (System.getProperty("task") != null) {
-            def task = System.getProperty("task")
-            switch (task) {
-                case "smoke": includeTags("smoke"); break
-                case "regress": includeTags("regress"); break
-                case "all": break // все тесты
-                default: includeTags("smoke")
-            }
-        }
-    }
 
-    // Фильтрация по классу если указан
-    if (System.getProperty("test.class") != null) {
-        filter {
-            includeClassNamePattern System.getProperty("test.class")
-        }
-    }
-
-    systemProperties System.getProperties()
-}
-
-// Задача для запуска только DemoQAParam с фильтрацией по тегам
-task runDemoQATests(type: Test) {
-    useJUnitPlatform {
-        if (System.getProperty("includeTags") != null) {
-            includeTags(System.getProperty("includeTags"))
-        } else if (System.getProperty("task") != null) {
-            def task = System.getProperty("task")
-            switch (task) {
-                case "smoke": includeTags("smoke"); break
-                case "regress": includeTags("regress"); break
-                case "all": break
-                default: includeTags("smoke")
-            }
-        }
-    }
-    include "**/DemoQAParam.class"
-    systemProperties System.getProperties()
-}
