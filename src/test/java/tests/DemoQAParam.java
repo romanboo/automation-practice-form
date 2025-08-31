@@ -9,6 +9,7 @@ import org.junit.jupiter.api.*;
 import helpers.Attach;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import properties.SystemProperties;
 
 import java.util.Map;
 
@@ -22,6 +23,7 @@ public class DemoQAParam extends TestBase{
 
     @BeforeAll
     static void setup() {
+        Configuration.remote = SystemProperties.remoteUrl;
         Configuration.browser = "chrome";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
