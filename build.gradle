@@ -88,5 +88,9 @@ test {
         }
     }
 
+    task allTests(type: Test) {
+        useJUnitPlatform()
+    }
+
 
 }
