@@ -53,6 +53,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("Submit TextBox Form")
+    @Tag("regress")
     @Description("Test verifies that TextBox form submits data correctly")
     @DisplayName("Проверка работы TextBox формы")
     @Link(name = "DemoQA TextBox", url = "https://demoqa.com/text-box")
@@ -87,6 +88,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("CheckBox Selection")
+    @Tag("regress")
     @Description("Test verifies that multiple options can be selected in CheckBox")
     @DisplayName("Проверка выбора чекбоксов")
     void checkBoxShouldAllowSelectingMultipleOptions() {
@@ -119,6 +121,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("RadioButton Selection")
+    @Tag("smoke")
     @Description("Test verifies that only one RadioButton can be selected")
     @DisplayName("Проверка радиокнопок")
     void radioButtonsShouldAllowSingleSelection() {
@@ -147,6 +150,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("WebTables CRUD")
+    @Tag("smoke")
     @Description("Test verifies adding and deleting records in WebTables")
     @DisplayName("Проверка работы с таблицей")
     void webTablesShouldAllowAddingAndDeletingRecords() {
@@ -182,6 +186,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("Date Picker")
+    @Tag("smoke")
     @Description("Test verifies date selection in date picker")
     @DisplayName("Проверка выбора даты")
     void datePickerShouldSelectCorrectDate() {
@@ -206,6 +211,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("Modal Dialogs")
+    @Tag("regress")
     @Description("Test verifies opening and closing modal dialogs")
     @DisplayName("Проверка модальных окон")
     void modalDialogsShouldOpenAndClose() {
@@ -233,6 +239,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("Buttons Interactions")
+    @Tag("regress")
     @Description("Test verifies different button interactions")
     @DisplayName("Проверка взаимодействия с кнопками")
     void buttonsShouldRespondToDifferentInteractions() {
@@ -262,6 +269,7 @@ public class DemoQAParam extends TestBase{
 
     @Test
     @Story("Browser Windows")
+    @Tag("regress")
     @Description("Test verifies opening new browser windows/tabs")
     @DisplayName("Проверка работы с новыми окнами")
     void shouldHandleNewBrowserWindows() {

@@ -56,9 +56,37 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
     systemProperty "allure.results.directory", "build/allure-results"
-    systemProperties System.getProperties() // Добавьте эту строку
+    systemProperties System.getProperties()
     testLogging {
         events "started", "skipped", "failed", "standard_error", "standard_out"
         exceptionFormat "short"
     }
+
+    tasks.withType(Test) {
+        useJUnitPlatform()
+        systemProperties(System.getProperties())
+
+        testLogging {
+            lifecycle {
+                events "started", "skipped", "failed", "standard_error", "standard_out"
+                exceptionFormat "short"
+            }
+        }
+    }
+
+
+
+    task smoke(type: Test) {
+        useJUnitPlatform {
+            includeTags("smoke")
+        }
+    }
+
+    task regress(type: Test) {
+        useJUnitPlatform {
+            includeTags("regress")
+        }
+    }
+
+
 }
