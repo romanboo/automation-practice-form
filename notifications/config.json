@@ -5,7 +5,7 @@
     "comment": "comment here @romanboo",
     "reportLink": "https://jenkins.autotests.cloud/job/027-romanboo-automation-practice-form-param/49",
     "language": "en",
-    "allureFolder": "C:\\Users\\roman\\AppData\\Local\\Temp\\7668159517283475004\\allure-report",
+    "allureFolder": "/home/jenkins/workspace/027-romanboo-automation-practice-form-param/allure-report",
     "enableChart": true,
     "enableSuitesPublishing": true,
     "customData": {}
