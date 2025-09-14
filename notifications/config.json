@@ -1,0 +1,20 @@
+{
+  "base": {
+    "project": "allure-notifications",
+    "environment": "qa.guru",
+    "comment": "comment here @romanboo",
+    "reportLink": "https://jenkins.autotests.cloud/job/027-romanboo-automation-practice-form-param/49",
+    "language": "en",
+    "allureFolder": "C:\\Users\\roman\\AppData\\Local\\Temp\\7668159517283475004\\allure-report",
+    "enableChart": true,
+    "enableSuitesPublishing": true,
+    "customData": {}
+  },
+  "telegram": {
+    "token": "8337309790:AAGIvaVLaYfT7EZ2aKBf_L7J4KjrSZbhkAc",
+    "chat": "-1003038596132",
+    "topic": "",
+    "replyTo": "",
+    "templatePath": "/templates/telegram.ftl"
+  }
+}
