@@ -12,6 +12,7 @@ public class TestBase {
     static void beforeAll() {
         Configuration.baseUrl = "C";
         Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://cropcircleconnector.com";
     }
 
 
