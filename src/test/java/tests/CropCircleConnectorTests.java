@@ -58,7 +58,7 @@ public class CropCircleConnectorTests extends TestBase {
 
     @Test
     @Story("Main Page Navigation")
-    @Tag("cropcircles")
+    @Tag("regress")
     @Description("Test verifies that main page loads correctly with all sections")
     @DisplayName("Проверка загрузки главной страницы")
     @Link(name = "Crop Circle Connector", url = "https://cropcircleconnector.com/interface2005.htm")
@@ -86,7 +86,7 @@ public class CropCircleConnectorTests extends TestBase {
 
     @Test
     @Story("Database Search Navigation")
-    @Tag("cropcircles")
+    @Tag("regress")
     @Description("Test verifies navigation to search page works correctly")
     @DisplayName("Проверка навигации по поиску")
     void searchNavigationShouldWorkCorrectly() {
@@ -114,7 +114,7 @@ public class CropCircleConnectorTests extends TestBase {
 
     @Test
     @Story("Website Accessibility")
-    @Tag("cropcircles")
+    @Tag("regress")
     @Description("Test verifies that Crop Circle Connector website is accessible")
     @DisplayName("Проверка доступности сайта Crop Circle Connector")
     void cropCircleWebsiteShouldBeAccessible() {
@@ -148,7 +148,7 @@ public class CropCircleConnectorTests extends TestBase {
 
     @Test
     @Story("Image Gallery Navigation")
-    @Tag("cropcircles")
+    @Tag("regress")
     @Description("Test verifies that image gallery works correctly")
     @DisplayName("Проверка навигации по галерее изображений")
     void imageGalleryShouldWorkCorrectly() {
@@ -171,7 +171,7 @@ public class CropCircleConnectorTests extends TestBase {
 
     @Test
     @Story("Responsive Design")
-    @Tag("cropcircles")
+    @Tag("regress")
     @Description("Test verifies that website layout is responsive")
     @DisplayName("Проверка адаптивности дизайна")
     void websiteShouldBeResponsive() {
@@ -191,7 +191,7 @@ public class CropCircleConnectorTests extends TestBase {
 
     @Test
     @Story("Form Validation")
-    @Tag("cropcircles")
+    @Tag("regress")
     @Description("Test verifies that forms validate input correctly")
     @DisplayName("Проверка валидации форм")
     void formsShouldValidateInputCorrectly() {
