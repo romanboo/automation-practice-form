@@ -91,7 +91,7 @@ public class CropCircleConnectorTests extends TestBase {
     @DisplayName("Проверка навигации по поиску")
     void searchNavigationShouldWorkCorrectly() {
         step("Открываем главную страницу", () -> {
-            open("/interface2005.htm");
+            open("https://cropcircleconnector.com/interface2005.htm");
             takeScreenshot();
         });
 
@@ -119,7 +119,7 @@ public class CropCircleConnectorTests extends TestBase {
     @DisplayName("Проверка доступности сайта Crop Circle Connector")
     void cropCircleWebsiteShouldBeAccessible() {
         step("Открываем главную страницу", () -> {
-            open("/interface2005.htm");
+            open("https://cropcircleconnector.com/interface2005.htm");
             takeScreenshot();
         });
 
@@ -153,7 +153,7 @@ public class CropCircleConnectorTests extends TestBase {
     @DisplayName("Проверка навигации по галерее изображений")
     void imageGalleryShouldWorkCorrectly() {
         step("Открываем детальную страницу круга", () -> {
-            open("/2025/rumours2025.html"); // Пример страницы
+            open("https://cropcircleconnector.com/2025/rumours2025.html"); // Пример страницы
             takeScreenshot();
         });
 
@@ -176,7 +176,7 @@ public class CropCircleConnectorTests extends TestBase {
     @DisplayName("Проверка адаптивности дизайна")
     void websiteShouldBeResponsive() {
         step("Открываем главную страницу", () -> {
-            open("/interface2005.htm");
+            open("https://cropcircleconnector.com/interface2005.htm");
             takeScreenshot();
         });
 
@@ -196,7 +196,7 @@ public class CropCircleConnectorTests extends TestBase {
     @DisplayName("Проверка валидации форм")
     void formsShouldValidateInputCorrectly() {
         step("Открываем страницу поиска", () -> {
-            open("/interface2005.htm");
+            open("https://cropcircleconnector.com/interface2005.htm");
             $("a[href*='search']").click();
             takeScreenshot();
         });
