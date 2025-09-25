@@ -1,0 +1,20 @@
+{
+  "base": {
+    "project": "allure-notifications",
+    "environment": "qa.guru",
+    "comment": "comment here @romanboo",
+    "reportLink": "https://jenkins.autotests.cloud/job/027-romanboo-CropCircleConnectorTests/16",
+    "language": "en",
+    "allureFolder": "/home/jenkins/workspace/027-romanboo-CropCircleConnectorTests/allure-report",
+    "enableChart": true,
+    "enableSuitesPublishing": true,
+    "customData": {}
+  },
+  "telegram": {
+    "token": "8337309790:AAGIvaVLaYfT7EZ2aKBf_L7J4KjrSZbhkAc",
+    "chat": "-1003038596132",
+    "topic": "",
+    "replyTo": "",
+    "templatePath": "/templates/telegram.ftl"
+  }
+}
