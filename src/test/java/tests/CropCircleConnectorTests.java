@@ -1,10 +1,18 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import helpers.Attach;
 import io.qameta.allure.*;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import properties.SystemProperties;
 
+
+import java.util.Map;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Selenide.*;
@@ -14,6 +22,39 @@ import static io.qameta.allure.Allure.step;
 @Epic("Crop Circle Connector")
 @Feature("Crop Circle Database Testing")
 public class CropCircleConnectorTests extends TestBase {
+
+
+
+    @BeforeAll
+    static void setup() {
+        Configuration.remote = SystemProperties.remoteUrl;
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.pageLoadStrategy = "eager";
+        Configuration.timeout = 15000;
+        Configuration.holdBrowserOpen = false;
+        Configuration.headless = false;
+
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        Configuration.browserCapabilities = capabilities;
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
+
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
+
+    }
 
     @Test
     @Story("Main Page Navigation")
